@@ -1,0 +1,248 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the home page.
+// -----------------------------------------------------------------------------
+
+.home {
+  transition: all .2s ease-in-out;
+  overflow: hidden;
+  .section-intro {
+    padding: 40px 0;
+
+    text-align: center;
+   }
+   h1 {
+    color: white;
+    font: $text-font-stack;
+    font-weight: bolder;
+    padding-top: 17%;
+  }
+  h2 {
+    font-family: $bold-font;
+    font-weight: bolder;
+    font-size: 23px;
+    color: $brand-color;
+    text-align: center;
+    margin-bottom: 3%;
+  }
+  h5 {
+    font-family: $text-font-stack;
+    color: #ffff;
+  }
+   .top-page {
+     text-align: left;
+     color: white;
+    background-image: image('../../assets/images/razer-nari-hero-desktop-wireless-gaming-headset CL.jpg');
+    background-position: center;
+    height: 67vh;
+    margin: 0;
+    padding: 0;
+    p {
+      color: $mid-grey;
+    }
+  }
+  .second-page{
+    background-color: $light-grey;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    h5 {
+      font-weight: bolder;
+    }
+    .flex-container {
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+      .flex-item {
+        width: 30%;
+      }
+    }
+  }
+  .third-page {
+    p {
+      color: $mid-grey;
+    }
+    background-image: image('../../assets/images/razer-nari-usp02-desktop-wireless-gaming-headset.jpg');
+    background-position: center;
+    height: 70vh;
+    margin: 0;
+    padding-top: 5%;
+    padding-bottom: 3%;
+  }
+  .fourth-page {
+    background-color: $light-grey;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    .view-all {
+      display: none;
+    }
+  }
+  .contact-page {
+    background-color: $dark-grey;
+    padding-top: 5%;
+    padding-bottom: 3%;
+    .information {
+      font-size: smaller;
+      line-height: 5px;
+    }
+    input, textarea {
+      font-weight: bolder;
+      color: white;
+      background-color: transparent;
+      border: 1px solid white;
+      margin-bottom: 10px;
+    }
+  }
+  .footer {
+    background-color: $light-grey;
+    .copyright {
+      text-align: center;
+      height: 5vh;
+      p {
+        margin-left: 5%;
+      }
+    }
+    .row {
+      width: 100%;
+      .social {
+        ul {
+          list-style-type: none;
+          display: inline-flex;
+        }
+      }
+    }
+  }
+}
+
+.swiper-container {
+  background-color: $light-grey;
+  margin-top: 40px;
+  margin: 0;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  img {
+    width: 280px;
+    height: 250px;
+    margin-bottom: 50px;
+  }
+  img:hover {
+    opacity: 0.1;
+  }
+  .swiper-slide:hover .products-button {
+    transition: ease .4s;
+    opacity: 1;
+  }
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-pagination-bullet {
+  background: $mid-grey;
+  display: inline-block;
+  position: relative;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+.swiper-pagination-bullet-active {
+  border: 2px solid $brand-color;
+}
+
+.swiper-pagination-bullet-active:before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background: $brand-color;
+  border-radius: 50%;
+}
+
+.card {
+  font-family: $bold-font;
+  border: none;
+  border-radius: 0;
+  border-bottom: 5px solid $brand-color;
+  margin: 0;
+  p {
+    font-size: small;
+  }
+  h5 {
+    font-size: smaller;
+    font-weight: bolder;
+  }
+  h2 {
+    text-align: left;
+  }
+  .card-body {
+    background-color: $grey;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .home {
+    .top-page {
+      .row {
+        .razer-nari {
+          display: none;
+        }
+      }
+    }
+    .second-page {
+      .flex-container {
+        display: flex;
+        margin-left: 6%;
+        margin-right: 6%;
+        flex-direction: column;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        .flex-item {
+          width: 100%;
+        }
+      } 
+    }
+    .fourth-page {
+      .view-all {
+        display: block;
+        text-align: center;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    .footer {
+      .copyright {
+        text-align: left;
+        height: 10vh;
+      }
+      .navbar {
+        height: 27vh;
+        .row {
+          .social {
+            text-align: left;
+            margin-top: 1%;
+            margin-left: -53px;
+          }
+        }
+      }
+    }
+  }
+  .card {
+    margin-top: 10%;
+    margin-bottom: 2%;
+    p {
+      font-size: small;
+    }
+  }
+}

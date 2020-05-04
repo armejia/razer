@@ -1,0 +1,212 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+/**
+ * Basic styles for links
+ */
+a {
+  color: $text-color;
+  text-decoration: none;
+
+  @include on-event {
+    color: $brand-color;
+    font-weight: bold;
+  }
+}
+
+.btn,
+a {
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+
+  @include on-event {
+    outline: 0;
+    @include boxshadow(none);
+  }
+}
+
+/**
+ * Basic styles for input fields
+ */
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-focus-ring-color: none;
+  outline: none;
+
+  @include on-event {
+    @include boxshadow(none);
+  }
+}
+
+//styles for nav
+.navbar {
+  background-color: $light-grey;
+  font-size: small;
+  height: 85px;
+  
+  .dropdown-menu {
+    width: 30%;
+    .dropdown-item {
+      font-size: smaller;
+      color: $mid-grey;
+      line-height: 20px;
+      margin-top: 3%;
+    }
+    .dropdown-item:hover {
+      color: $brand-color;
+      background-color: transparent;
+    }
+    .dropdown-submenu {
+      position: relative;
+      left: 194px;
+      top: -84px;
+    }
+    
+    .dropdown-submenu a::after {
+      transform: rotate(-90deg);
+      position: absolute;
+      right: 6px;
+      top: .8em;
+    }
+  }
+  .collapse .navbar-collapse {
+    background-color: $light-grey;
+    .mobile-nav {
+      display: none;
+    }
+  }
+}
+
+#navbarSupportedContent {
+  line-height: 10px;
+  ul li {
+    list-style: none;
+    line-height: 4;
+    i {
+      float: right;
+      margin-top: 10%;
+    }
+  }
+  
+}
+
+#products, #audio {
+  display: none;
+  font-size: smaller;
+  ul li {
+    list-style: none;
+    line-height: 4;
+    li:hover {
+      color: $brand-color;
+    }
+    a {
+      font-size: large;
+      color: $mid-grey;
+    }
+    i {
+      float: right;
+      margin-top: 10%;
+    }
+  }
+}
+
+
+//styles for navbar-toggler
+.navbar-toggler {
+  padding: 10px 0;
+
+  border: 0;
+  border-radius: 0;
+
+  .icon-bar {
+    display: block;
+    height: 4px;
+    width: 29px;
+
+    background: #000;
+
+    @include transition(0.5s cubic-bezier(0.65, 0.05, 0.36, 1));
+
+    @include boxshadow(none);
+
+    &+.icon-bar {
+      margin-top: 4px;
+    }
+  }
+
+  &[aria-expanded="true"] {
+    .icon-bar {
+      &:first-child {
+        @include transform(rotate(225deg) translate(-6px, -5px));
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:last-child {
+        @include transform(rotate(-225deg) translate(-6px, 6px));
+      }
+    }
+  }
+
+  @include on-event() {
+    outline: 0;
+  }
+}
+
+p {
+  font-size: 14px;
+}
+
+@include media-breakpoint-up(sm) {
+  .container {
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+  p {
+    font-size: 12px;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  p {
+    font-size: 14px;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  p {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .collapse .navbar-collapse {
+    background-color: $mid-grey;
+    display: flex;
+    flex-direction: column;
+  }
+  .third-page .container .row .col-sm-1 img{
+    display: none;
+    background-position: center;
+    padding-bottom: 0;
+  }
+  .home .third-page {
+    height: 10vh;
+  }
+}
+
+@media (min-width: 768px){
+  .navbar-expand-md .navbar-nav .dropdown-menu {
+    
+    background-color: black;
+    margin-top: 23%;
+    width: fit-content;
+}}

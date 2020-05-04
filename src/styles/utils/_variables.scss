@@ -1,0 +1,57 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+//font
+@font-face {
+    font-family: "Montseratt";
+    src: url("../../assets/fonts/Montseratt/montserrat-light_0.ttf");
+    src: url("../../assets/fonts/Montseratt/montserrat-light_0.ttf") format("ttf")
+    }
+
+    @font-face {
+        font-family: "MontserattBold";
+        src: url("../../assets/fonts/Montseratt/MontserratAlternates-ExtraBold.otf");
+        src: url("../../assets/fonts/Montseratt/MontserratAlternates-ExtraBold.otf") format("otf")
+        }
+/// Regular font family
+$font-opensans: 'Montseratt';
+$bold-font: 'MontserattBold', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
+
+/// @type List
+$text-font-stack: $font-opensans, 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
+
+/// Code (monospace) font family
+/// @type List
+$code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
+
+/// Copy text color
+/// @type Color
+$text-color: #736D6D !default;
+
+/// Main brand color
+/// @type Color
+$brand-color: #00FD00 !default;
+
+//grey
+$grey: #161415 !default;
+
+/// Light grey
+/// @type Color
+$light-grey: #0F0F0F !default;
+
+/// Medium grey
+/// @type Color
+$mid-grey: #999 !default;
+
+/// Dark grey
+/// @type Color
+$dark-grey: #080808 !default;
+
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+///   $base-url: 'http://cdn.example.com/assets/';
+$base-url: '../assets/' !default;

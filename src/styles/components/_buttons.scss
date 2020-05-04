@@ -1,0 +1,35 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+%button {
+    font-size: x-small;
+    font-weight: bold;
+    background-color: $brand-color; 
+}
+
+.buy-now {
+    @extend %button;
+    padding: 10px;
+    width: 15%;
+}
+.mobile-buy {
+    @extend %button;
+    font-size: medium;
+    text-align: center;
+    width: 100%;
+    height: 70px;
+}
+.products-button {
+    @extend %button;
+    transition: ease .5s;
+    opacity: 0 ;
+    position: absolute;
+    padding: 10px;
+    width: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
